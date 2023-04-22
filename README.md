@@ -17,7 +17,11 @@ Python разработчик, в поиске работы, люблю писа
        <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/>
    </a>
 <p align='center'>
-   📫 How to reach me: <a href='mailto:s1ntecs@icloud.com'>s1ntecs@icloud.com</a>
+   📫 Мое резюме в HH <a href='https://hh.ru/resume/95387935ff0b16b6d60039ed1f575264476257'>Руслан Фаттахов</a>
+</p>
+   
+<p align='center'>
+   📫 Моя почта <a href='mailto:s1ntecs@icloud.com'>s1ntecs@icloud.com</a>
 </p>
 
 ## 🛠 Мой стэк технологий:
