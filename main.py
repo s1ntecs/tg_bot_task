@@ -1,5 +1,4 @@
 from aiogram.utils import executor
-from aiogram import types
 from create_bot import dp
 from new_poll import register_handlers_poll
 from currency import register_handlers_currency

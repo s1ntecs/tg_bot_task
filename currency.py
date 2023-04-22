@@ -11,7 +11,7 @@ class Currency(StatesGroup):
 
 
 async def get_currency(message: types.Message):
-    # Отправляем сообщение с просьбой ввести город
+    """ Отправляем сообщение с просьбой ввести город. """
     await message.answer("Введите исходную валюту (например, USD):")
 
     # Устанавливаем состояние ожидания ввода валюту
@@ -19,6 +19,8 @@ async def get_currency(message: types.Message):
 
 
 async def convert_currency(message: types.Message, state: FSMContext):
+    """  Вводим целевую валюту. """
+    # Делаем все буквы заглавными
     base_currency = message.text.upper()
     await state.update_data(base_currency=base_currency)
     await message.answer("Введите целевую валюту (например, EUR):")
@@ -26,6 +28,10 @@ async def convert_currency(message: types.Message, state: FSMContext):
 
 
 async def process_target_currency(message: types.Message, state: FSMContext):
+    """
+    Обрабатываем  полученные данные и отправляем
+    запрос на выдачу курса валют
+    """
     target_currency = message.text.upper()
     await state.update_data(target_currency=target_currency)
     data = await state.get_data()

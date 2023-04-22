@@ -3,7 +3,7 @@ from aiogram import types, Dispatcher
 
 # Функция-обработчик команды /start
 async def send_welcome(message: types.Message):
-    # Создаем клавиатуру с функциями бота
+    """ Создаем клавиатуру с функциями бота. """
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     weather_button = types.KeyboardButton("Погода")
     currency_button = types.KeyboardButton("Конвертер валют")
@@ -24,6 +24,7 @@ async def send_welcome(message: types.Message):
 
 
 async def handle_messages(message: types.Message):
+    """ Обрабатываем кнопки. """
     match message.text:
         case 'Погода':
             await message.answer("Чтобы узнать погоду, отправьте команду /weather")
@@ -39,7 +40,7 @@ async def handle_messages(message: types.Message):
 
 # Функция-обработчик команды /help
 async def send_help(message: types.Message):
-    # Отправляем сообщение с инструкцией по использованию бота
+    """ Отправляем сообщение с инструкцией по использованию бота. """
     await message.answer(
         "Я могу выполнять следующие команды:\n"
         "/start - начать работу с ботом\n"
@@ -52,5 +53,6 @@ async def send_help(message: types.Message):
 
 
 def register_main_handlers(dp: Dispatcher):
+    """ Регистрируем обработчики команд. """
     dp.register_message_handler(send_welcome, commands=["start"])
     dp.register_message_handler(send_help, commands=["help"])
